@@ -1,0 +1,22 @@
+# WordPress Hardening: wp-config.php
+<files wp-config.php>
+order allow,deny
+deny from all
+</files>
+
+# Disables the access to htaccess file
+<files .htaccess>
+order allow,deny
+deny from all
+</files>
+
+# WordPress Hardening: wp-includes
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^wp-admin/includes/ - [F,L]
+RewriteRule !^wp-includes/ - [S=3]
+RewriteRule ^wp-includes/[^/]+\.php$ - [F,L]
+RewriteRule ^wp-includes/js/tinymce/langs/.+\.php - [F,L]
+RewriteRule ^wp-includes/theme-compat/ - [F,L]
+</IfModule>
