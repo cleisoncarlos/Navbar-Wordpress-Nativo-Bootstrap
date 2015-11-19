@@ -1,3 +1,35 @@
+ // remove versão do rodapé do wordpress
+
+
+function change_footer_version() {
+  return 'Version 1.0.0';
+}
+add_filter( 'update_footer', 'change_footer_version', 9999 );
+
+
+
+// altera o texto com versão do wordpress do rodapé
+
+function remove_footer_admin () {
+echo 'Alimentado por <a href="http://www.wordpress.org" target="_blank">WordPress</a> | Desenhado por <a href="http://www.wordpress-love.com" target="_blank">Wordpress</a> | WordPress Tutoriais: <a href="http://www.wordpress-love.com" target="_blank">Wordpress Love</a></p>';
+}
+ 
+add_filter('admin_footer_text', 'remove_footer_admin');
+
+
+
+
+
+// remove versão do wordpress 
+
+function wpbeginner_remove_version() {
+return ";
+}
+add_filter('the_generator', 'wpbeginner_remove_version');
+ 
+ 
+ 
+ 
     // mudar logo do admin
 
     function my_login_logo() { ?>
