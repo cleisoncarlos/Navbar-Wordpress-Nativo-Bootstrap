@@ -1,3 +1,20 @@
+// trocar logo do admin 
+
+function cutom_login_logo() {
+echo "<style type=\"text/css\">
+body.login div#login h1 a {
+background-image: url(".get_bloginfo('template_directory')."/images/logo.png);
+-webkit-background-size: auto;
+background-size: auto;
+margin: 0 0 25px;
+width: 320px;
+}
+</style>";
+}
+add_action( 'login_enqueue_scripts', 'cutom_login_logo' );
+
+
+
  // remove versão do rodapé do wordpress
 
 
