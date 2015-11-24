@@ -30,24 +30,14 @@ add_filter('the_generator', 'wpbeginner_remove_version');
  
  
  
-    // mudar logo do admin
-
-    function my_login_logo() { ?>
-       body.login div#login h1 a {
-            background-image: url(/img/site-login-logo.png);
-            padding-bottom: 30px;
-       }
-     
-    <?php }
-    add_action( 'login_enqueue_scripts', 'my_login_logo' );
-
+    
 
 
 
     // mudar texto do rodapé do wordpress
 
     function remove_footer_admin () {
-    	echo '© <a href="http://tableless.com.br/">Tableless</a> - Desenvolvimento inteligente com padrões web e design';
+    	echo '© <a href="http://meusite.com.br/">Meu site</a> - Desenvolvimento inteligente com padrões web e design';
     }
     add_filter('admin_footer_text', 'remove_footer_admin');
 
