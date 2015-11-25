@@ -1,5 +1,11 @@
-// trocar logo do admin 
+// desabilitar editar de temas e plugins no wordpress
+define('DISALLOW_FILE_EDIT', true);
 
+// Para Remover as Revisões dos posts
+ define( 'WP_POST_REVISIONS', FALSE );
+ 
+
+// trocar logo do admin 
 function cutom_login_logo() {
 echo "<style type=\"text/css\">
 body.login div#login h1 a {
@@ -14,10 +20,7 @@ width: 320px;
 add_action( 'login_enqueue_scripts', 'cutom_login_logo' );
 
 
-
  // remove versão do rodapé do wordpress
-
-
 function change_footer_version() {
   return 'Version 1.0.0';
 }
